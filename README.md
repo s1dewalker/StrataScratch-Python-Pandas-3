@@ -45,7 +45,7 @@ df2.groupby('popularity', as_index = False).agg(
     )
 ```
 Notes: Check logical operators in function (& has higher precedence than >= and <=, so 1 & x gets evaluated first, leading to unexpected behavior.)
-🏷️: Functions (Fn)
+🏷️: Functions (fn)
 <br/>
 
 
