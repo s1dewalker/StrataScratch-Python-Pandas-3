@@ -94,6 +94,8 @@ grouped_df[['year_month', 'revenue_diff_pct']]
 Notes: 
 1. To get "YYYY-MM" we can use `.dt.to_period('M')`
 2. To get previous time series value we use `.shift()`
+
+🏷️: Time Series ⏱️
 <br/>
 
 ## #6. [The Most Popular Client_Id Among Users Using Video and Voice Calls](https://platform.stratascratch.com/coding/2029-the-most-popular-client_id-among-users-using-video-and-voice-calls?code_type=2) 🎁
