@@ -120,3 +120,37 @@ Notes:
 1. Unlike agg(), which reduces the grouped data (e.g., returning a summary), `transform()` keeps the original shape of the DataFrame.
 2. The mean of these binary values (1 and 0) can be interpreted as the percentage of times the event occurred out of all the events for that user.
 <br/>
+
+## [Retention Rate](https://platform.stratascratch.com/coding/2029-the-most-popular-client_id-among-users-using-video-and-voice-calls?code_type=2)
+
+```python
+sf_events['year_month'] = sf_events['date'].dt.to_period('M')
+df = sf_events.sort_values('date')
+
+dec20 = df['year_month'] == '2020-12'
+jan21 = df['year_month'] == '2021-01'
+
+df['max_dates'] = df.groupby(['user_id','account_id'])['date'].transform('max')
+df['year_month_max'] = df['max_dates'].dt.to_period('M')
+
+df['active_or_not'] = df.apply(lambda x: 1 if x['year_month_max'] > x['year_month'] else 0, axis=1)
+
+df
+
+c = df['active_or_not'] == 1
+
+dec20_ret = df[(dec20) & (c)]
+jan21_ret = df[(jan21) & (c)]
+
+dec20_ret2 = dec20_ret.groupby('account_id', as_index = False)['active_or_not'].nunique()
+jan21_ret2 = jan21_ret.groupby('account_id', as_index = False)['active_or_not'].nunique()
+
+final = pd.merge(dec20_ret2, jan21_ret2, how = 'outer', on = 'account_id', suffixes = ('_dec20',"_jan21")).fillna(0)
+
+final['retention'] = final['active_or_not_jan21'] / final['active_or_not_dec20']
+
+final[['account_id', 'retention']]
+```
+
+<br/>
+
