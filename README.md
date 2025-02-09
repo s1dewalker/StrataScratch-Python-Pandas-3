@@ -59,3 +59,20 @@ grouped_df[grouped_df['total_am'] == grouped_df['total_am'].max()][['city']]
 ```
 Notes: We can count the number of amenities in each row by using the `str.count()` function on the 'amenities' column. We can then create a new column called 'amenities_count' to store the count for each row.
 <br/>
+
+## [Top Percentile Fraud](https://platform.stratascratch.com/coding/10303-top-percentile-fraud?code_type=2)
+
+```python
+fraud_score["percentile"] = fraud_score.groupby("state")["fraud_score"].rank(pct=True)
+
+df = fraud_score[fraud_score["percentile"] > 0.95]
+
+result = df[["policy_num", "state", "claim_cost", "fraud_score"]]
+```
+Notes: <br/>
+1. Calculate the percentile rank of the fraud scores within each state. <br/>
+We can do this by grouping the data by the 'state' column and applying the `rank` function to the 'fraud_score' column with the argument `pct=True`. <br/>
+This will give us the percentile rank of each fraud score, within its respective state. <br/>
+
+2. Now we can filter the data to select only the claims with a percentile rank greater than 0.95
+<br/>
