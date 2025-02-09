@@ -76,3 +76,20 @@ This will give us the percentile rank of each fraud score, within its respective
 
 2. Now we can filter the data to select only the claims with a percentile rank greater than 0.95
 <br/>
+
+## [Monthly Percentage Difference](https://platform.stratascratch.com/coding/10319-monthly-percentage-difference?code_type=2)
+
+```python
+sf_transactions['year_month'] = sf_transactions['created_at'].dt.to_period('M')
+
+grouped_df = sf_transactions.groupby('year_month', as_index = False).agg(revenue = ('value', 'sum'))
+
+grouped_df['prev_revenue'] = grouped_df['revenue'].shift()
+
+grouped_df['revenue_diff_pct'] = (grouped_df['revenue'] - grouped_df['prev_revenue'])*100 / grouped_df['prev_revenue']
+
+grouped_df[['year_month', 'revenue_diff_pct']]
+```
+Notes: 
+1. To get "YYYY-MM" we can use `.dt.to_period('M')`
+2. To get previous time series value we use `.shift()`
