@@ -20,7 +20,7 @@ sorted_df[sorted_df['rank'] <=5][['state','stars5']]
 ```
 <br/>
 
-## #2. [Host Popularity Rental Prices](https://platform.stratascratch.com/coding/9632-host-popularity-rental-prices?code_type=2)
+## #2. [Host Popularity Rental Prices](https://platform.stratascratch.com/coding/9632-host-popularity-rental-prices?code_type=2) ⭐
 
 ```python
 def pop(x):
@@ -60,7 +60,7 @@ grouped_df[grouped_df['total_am'] == grouped_df['total_am'].max()][['city']]
 Notes: We can count the number of amenities in each row by using the `str.count()` function on the 'amenities' column. We can then create a new column called 'amenities_count' to store the count for each row.
 <br/>
 
-## #4. [Top Percentile Fraud](https://platform.stratascratch.com/coding/10303-top-percentile-fraud?code_type=2)
+## #4. [Top Percentile Fraud](https://platform.stratascratch.com/coding/10303-top-percentile-fraud?code_type=2) ⭐
 
 ```python
 fraud_score["percentile"] = fraud_score.groupby("state")["fraud_score"].rank(pct=True)
@@ -77,7 +77,7 @@ This will give us the percentile rank of each fraud score, within its respective
 2. Now we can filter the data to select only the claims with a percentile rank greater than 0.95
 <br/>
 
-## #5. [Monthly Percentage Difference](https://platform.stratascratch.com/coding/10319-monthly-percentage-difference?code_type=2)
+## #5. [Monthly Percentage Difference](https://platform.stratascratch.com/coding/10319-monthly-percentage-difference?code_type=2) ⭐
 
 ```python
 sf_transactions['year_month'] = sf_transactions['created_at'].dt.to_period('M')
@@ -95,7 +95,7 @@ Notes:
 2. To get previous time series value we use `.shift()`
 <br/>
 
-## #6. [The Most Popular Client_Id Among Users Using Video and Voice Calls](https://platform.stratascratch.com/coding/2029-the-most-popular-client_id-among-users-using-video-and-voice-calls?code_type=2)
+## #6. [The Most Popular Client_Id Among Users Using Video and Voice Calls](https://platform.stratascratch.com/coding/2029-the-most-popular-client_id-among-users-using-video-and-voice-calls?code_type=2) ⭐
 
 ```python
 events_list  = ['video call received', 'video call sent', 'voice call received', 'voice call sent']
