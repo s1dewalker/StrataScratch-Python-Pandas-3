@@ -44,7 +44,7 @@ df2.groupby('popularity', as_index = False).agg(
     max_price = ('price', 'max')
     )
 ```
-Notes: Check logical operators in function (& has higher precedence than >= and <=, so 1 & x gets evaluated first, leading to unexpected behavior.)
+Notes: Check logical operators in function (& has higher precedence than >= and <=, so 1 & x gets evaluated first, leading to unexpected behavior.) <br/>
 🏷️: Functions (fn)
 <br/>
 
