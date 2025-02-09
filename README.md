@@ -95,7 +95,7 @@ Notes:
 2. To get previous time series value we use `.shift()`
 <br/>
 
-## #6. [The Most Popular Client_Id Among Users Using Video and Voice Calls](https://platform.stratascratch.com/coding/2029-the-most-popular-client_id-among-users-using-video-and-voice-calls?code_type=2) ⭐
+## #6. [The Most Popular Client_Id Among Users Using Video and Voice Calls](https://platform.stratascratch.com/coding/2029-the-most-popular-client_id-among-users-using-video-and-voice-calls?code_type=2) 🎁
 
 ```python
 events_list  = ['video call received', 'video call sent', 'voice call received', 'voice call sent']
