@@ -44,5 +44,18 @@ df2.groupby('popularity', as_index = False).agg(
     max_price = ('price', 'max')
     )
 ```
-<br/>
 Notes: Check logical operators in function (& has higher precedence than >= and <=, so 1 & x gets evaluated first, leading to unexpected behavior.)
+<br/>
+
+
+## [City With Most Amenities](https://platform.stratascratch.com/coding/9633-city-with-most-amenities?code_type=2)
+
+```python
+df["amenities_count"] = df["amenities"].str.count(",") + 1
+
+grouped_df = df.groupby('city', as_index = False).agg(total_am = ('amenities_count', 'sum'))
+
+grouped_df[grouped_df['total_am'] == grouped_df['total_am'].max()][['city']]
+```
+Notes: We can count the number of amenities in each row by using the `str.count()` function on the 'amenities' column. We can then create a new column called 'amenities_count' to store the count for each row.
+<br/>
