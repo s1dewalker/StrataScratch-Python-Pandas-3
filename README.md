@@ -156,7 +156,7 @@ final['retention'] = final['active_or_not_jan21'] / final['active_or_not_dec20']
 
 final[['account_id', 'retention']]
 ```
-🏷️: Lambda (λ)
+🏷️: Lambda (λ) | Time Series ⏱️
 
 <br/>
 
