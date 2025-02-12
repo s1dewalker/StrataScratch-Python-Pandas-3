@@ -121,7 +121,9 @@ result[c2][['client_id']]
 ```
 Notes: 
 1. Unlike agg(), which reduces the grouped data (e.g., returning a summary), `transform()` keeps the original shape of the DataFrame.
-2. The mean of these binary values (1 and 0) can be interpreted as the percentage of times the event occurred out of all the events for that user.
+2. The mean of these binary values (1 and 0) can be interpreted as the percentage of times the event occurred out of all the events for that user.<br/>
+
+🏷️: Lambda (λ)
 <br/>
 
 ## #7. [Retention Rate](https://platform.stratascratch.com/coding/2029-the-most-popular-client_id-among-users-using-video-and-voice-calls?code_type=2)
@@ -154,6 +156,7 @@ final['retention'] = final['active_or_not_jan21'] / final['active_or_not_dec20']
 
 final[['account_id', 'retention']]
 ```
+🏷️: Lambda (λ)
 
 <br/>
 
